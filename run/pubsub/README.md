@@ -117,7 +117,7 @@ Your service is now fully integrates with Pub/Sub
 
 * Send a Pub/Sub message to the Topic
 ```shell script
-gcloud pubsub topics publis myTopic --message "Mundo"
+gcloud pubsub topics publis myTopic --message "Human"
 ```
 
 ### Navigate to the service logs:
@@ -128,5 +128,5 @@ gcloud pubsub topics publis myTopic --message "Mundo"
 
 Logs might take a few moments to appear. If you don't see them immediately, check again after a few moments.
 
-* Look for the `"Hello Mundo!"` message.
+* Look for the `"Hello Human!"` message.
 
