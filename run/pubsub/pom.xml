@@ -49,16 +49,8 @@
       <artifactId>camel-quarkus-direct</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.camel.quarkus</groupId>
-      <artifactId>camel-quarkus-jackson</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-arc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.camel.quarkus</groupId>
-      <artifactId>camel-quarkus-jsonpath</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.camel.quarkus</groupId>
@@ -69,20 +61,8 @@
       <artifactId>camel-quarkus-bean</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.camel.quarkus</groupId>
-      <artifactId>camel-quarkus-jdbc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-agroal</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-container-image-jib</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jdbc-postgresql</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
