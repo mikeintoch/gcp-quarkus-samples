@@ -33,7 +33,6 @@ gcloud services enable run.googleapis.com containerregistry.googleapis.com
 This commando enables the following APIs:
 * Cloud Run API
 * Container Registry API
-* Cloud Build API
 
 ## Creating a Pub/Sub Topic
 * Create a new Pub/Sub topic
