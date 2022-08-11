@@ -50,6 +50,7 @@ gcloud auth configure-docker
 ```
 
 * Use the Jib Plugin for Quarkus to build and push the container to Container Registry
+
 ([Jib plugin](https://quarkus.io/guides/container-image#jib)) is integrated into a Quarkus dependency library and can be configured to build and push images without the need for a docker file. All dependencies are cached in a different layer than the application making rebuilds fast and small.
 
 ```shell script
