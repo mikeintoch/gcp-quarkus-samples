@@ -22,7 +22,7 @@ Replace **PROJECT_ID** with the name of the project you created  for this exampl
 
 * Configure gcloud for your chosen region
 ```shell script
-gcloud confi set run/region REGION
+gcloud config set run/region REGION
 ```
 Replace **REGION** with the region of your choice.
 
