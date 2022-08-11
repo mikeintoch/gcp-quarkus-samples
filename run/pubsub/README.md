@@ -122,7 +122,7 @@ gcloud pubsub topics publish myTopic --message "Human"
 ### Navigate to the service logs:
 
 * Navigate to the Google Cloud console
-* Click the pubsub-tutorial service.
+* Click the camel-pubsub-service service.
 * Select the Logs tab.
 
 Logs might take a few moments to appear. If you don't see them immediately, check again after a few moments.
