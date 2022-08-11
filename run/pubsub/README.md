@@ -28,8 +28,7 @@ Replace **REGION** with the region of your choice.
 
 * Enable the Cloud API neccessary to run this example
 ```shell script
-gcloud services enable run.googleapis.com containerregistry.googleapis.com \
-cloudbuild.googleapis.com 
+gcloud services enable run.googleapis.com containerregistry.googleapis.com
 ```
 This commando enables the following APIs:
 * Cloud Run API
@@ -68,7 +67,7 @@ It produces an container image with the next format **gcr.io/PROJECT_ID/IMAGE_NA
 
 * Run the following command to deploy app on Cloud Run
 ```shell script
-gcloud run deploy my-camel-service --image gcr.io/PROJECT_ID/IMAGE_NAME:TAG_ID --no-allow-unauthenticated
+gcloud run deploy camel-pubsub-service --image gcr.io/PROJECT_ID/IMAGE_NAME:TAG_ID --no-allow-unauthenticated
 ```
 Replace **PROJECT_ID**, **TAG_ID** and **IMAGE_NAME** with your own values.
 
@@ -85,7 +84,7 @@ gcloud iam service-accounts create cloud-run-pubsub-invoker \
 ### Create a Pub/Sub subscription with the service account
 * Give the invoker service account permission to invoke your camel service:
 ```shell script
-gcloud run services add-iam-policy-binding my-camel-service \
+gcloud run services add-iam-policy-binding camel-pubsub-service \
    --member=serviceAccount:cloud-run-pubsub-invoker@PROJECT_ID.iam.gserviceaccount.com \
    --role=roles/run.invoker
 ```
@@ -117,7 +116,7 @@ Your service is now fully integrates with Pub/Sub
 
 * Send a Pub/Sub message to the Topic
 ```shell script
-gcloud pubsub topics publis myTopic --message "Human"
+gcloud pubsub topics publish myTopic --message "Human"
 ```
 
 ### Navigate to the service logs:
