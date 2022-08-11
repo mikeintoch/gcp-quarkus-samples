@@ -1,4 +1,4 @@
-# Using Pub/Sub with Cloud Run and process information with Quarkus + Apache Camel
+# Using Pub/Sub with Cloud Run and process messages with Quarkus + Apache Camel
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
