@@ -1,4 +1,4 @@
-package dev.migueldh;
+package dev.mikeintoch;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.JsonLibrary;
