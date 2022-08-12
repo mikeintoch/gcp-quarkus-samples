@@ -17,7 +17,7 @@ public class Routes extends RouteBuilder {
 
          onException(Exception.class)
          .handled(true)
-         .log("Server Error")
+         .log("Internal Server Error")
          .setBody(simple("Internal Server Error"));
 
 
