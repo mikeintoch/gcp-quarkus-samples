@@ -1,7 +1,7 @@
+
 package dev.migueldh;
 
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.model.dataformat.JsonLibrary;
 import org.apache.camel.model.rest.RestBindingMode;
 
 public class Routes extends RouteBuilder {
@@ -12,29 +12,19 @@ public class Routes extends RouteBuilder {
         restConfiguration().bindingMode(RestBindingMode.json);
 
         rest("/persons")
-         .get()
-         .to("direct:getPersons")
-         .post()
-         .to("direct:addPerson");
+                .get()
+                .to("direct:getPersons")
 
-         onException(Exception.class)
-         .handled(true)
-         .log("Internal Server Error")
-         .setBody(simple("Internal Server Error"));
-     
+                .post()
+                .type(Person.class)
+                .to("direct:addPerson");
 
-         from("direct:getPersons")
-         .setBody(simple("Select * from person"))
-        .to("jdbc:default")
-        .log("We have ${header[CamelJdbcRowCount]} persons in the database.");
-
+        from("direct:getPersons")
+                .to("jpa://com.sample.Person?resultClass=com.sample.Person&namedQuery=findAll")
+                .log("Person List: ");
 
         from("direct:addPerson")
-         .setBody(simple("INSERT INTO person(name,age) values ('${body[name]}', '${body[age]}')"))
-        .to("jdbc:default")
-        .setBody(simple("Information Received"));
+                .to("jpa://com.sample.Person?usePersist=true");
 
-         
     }
-    
 }

@@ -25,7 +25,6 @@ import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 
 import io.agroal.api.AgroalDataSource;
-import io.quarkus.agroal.DataSource;
 import io.quarkus.runtime.StartupEvent;
 import org.apache.camel.CamelContext;
 
@@ -48,7 +47,7 @@ public class CamelResource {
                     statement.execute("drop table person");
                 } catch (Exception ignored) {
                 }
-                statement.execute("create table person (name varchar,age varchar)");
+                statement.execute("create table person (name varchar(50),age varchar(50))");
             }
         }
     }
