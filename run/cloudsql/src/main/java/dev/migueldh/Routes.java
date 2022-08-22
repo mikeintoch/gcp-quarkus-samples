@@ -20,11 +20,11 @@ public class Routes extends RouteBuilder {
                 .to("direct:addPerson");
 
         from("direct:getPersons")
-                .to("jpa://com.sample.Person?resultClass=com.sample.Person&namedQuery=findAll")
+                .to("jpa://dev.migueldh.Person?resultClass=dev.migueldh.Person&namedQuery=findAll")
                 .log("Person List: ");
 
         from("direct:addPerson")
-                .to("jpa://com.sample.Person?usePersist=true");
+                .to("jpa://dev.migueldh.Person?usePersist=true");
 
     }
 }
