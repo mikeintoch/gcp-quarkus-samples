@@ -21,7 +21,7 @@ public class Routes extends RouteBuilder {
 
         from("direct:getPersons")
                 .to("jpa://dev.migueldh.Person?resultClass=dev.migueldh.Person&namedQuery=findAll")
-                .log("Person List: ");
+                .log("Person List: ${body} ");
 
         from("direct:addPerson")
                 .to("jpa://dev.migueldh.Person?usePersist=true");
