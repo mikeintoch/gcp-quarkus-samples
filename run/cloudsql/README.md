@@ -139,7 +139,7 @@ git clone https://github.com/mikeintoch/gcp-quarkus-samples.git
 ```
 * Change directory
 ```shell script
-cd gcp-quarkus-samples/cloudsql
+cd gcp-quarkus-samples/run/cloudsql
 ```
 
 * Modify **application.properties** file replacing PRIVATE_ADDRESS value with your IP Address from your instance
@@ -173,25 +173,48 @@ It produces an container image with the next format **gcr.io/PROJECT_ID/IMAGE_NA
 
 * Run the following command to deploy app on Cloud Run
 ```shell script
-gcloud run deploy camel-sql-service --image gcr.io/PROJECT_ID/IMAGE_NAME:TAG_ID --no-allow-unauthenticated
+gcloud run deploy camel-sql-service --image gcr.io/PROJECT_ID/IMAGE_NAME:TAG_ID --vpc-connector="my-connector" --no-allow-unauthenticated
 ```
 Replace **PROJECT_ID**, **TAG_ID** and **IMAGE_NAME** with your own values.
 
 The `--no-allow-unauthenticated` flag restricts unauthenticated access to the service.
+The `--vpc-connector` flag allows your service connects to database through Serverless VPC.
 
 ## Trying out
 
-* Send a Pub/Sub message to the Topic
+* Get URL from you service
 ```shell script
-gcloud pubsub topics publish myTopic --message "Human"
+gcloud run services list
 ```
+from the output copy the information from URL column
 
-### Navigate to the service logs:
+* Send a request to your service to create Person.
+```shell script
+curl -X POST https://YOUR_URL/persons  -H 'Content-Type: application/json' -d '{"name":"John","surname":"Smith"}'
+```
+Replace **YOUR_URL** with your own value.
 
-* Navigate to the Google Cloud console
-* Click the camel-pubsub-service service.
-* Select the Logs tab.
+**Output**
+```shell script
+{
+    "id": 1,
+    "name": "John",
+    "surname": "Smith"
+}
 
-Logs might take a few moments to appear. If you don't see them immediately, check again after a few moments.
+```
+* Send a request to your service to get all Persons.
+```shell script
+curl  https://YOUR_URL/persons  -H 'Content-Type: application/json'
+```
+Replace **YOUR_URL** with your own value.
 
-* Look for the `"Hello Human!"` message.
+**Output**
+```shell script
+{
+    "id": 1,
+    "name": "John",
+    "surname": "Smith"
+}
+
+```
