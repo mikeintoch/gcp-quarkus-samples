@@ -1,5 +1,5 @@
 
-package dev.migueldh;
+package dev.mikeintoch;
 
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class Person {
     private String name;
     private String surname;
 
-    public Person() {
+    public Person() { 
     }
 
     public Person(String name, String description) {

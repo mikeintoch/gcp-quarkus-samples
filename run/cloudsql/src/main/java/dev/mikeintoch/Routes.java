@@ -1,5 +1,5 @@
 
-package dev.migueldh;
+package dev.mikeintoch;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
@@ -25,11 +25,11 @@ public class Routes extends RouteBuilder {
                 .to("direct:addPerson");
 
         from("direct:getPersons")
-                .to("jpa://dev.migueldh.Person?resultClass=dev.migueldh.Person&namedQuery=findAll")
+                .to("jpa://dev.mikeintoch.Person?resultClass=dev.mikeintoch.Person&namedQuery=findAll")
                 .log("Person List: ${body} ");
 
         from("direct:addPerson")
-                .to("jpa://dev.migueldh.Person?usePersist=true");
+                .to("jpa://dev.mikeintoch.Person?usePersist=true");
 
     }
 }
