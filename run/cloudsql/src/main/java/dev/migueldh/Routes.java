@@ -11,6 +11,11 @@ public class Routes extends RouteBuilder {
 
         restConfiguration().bindingMode(RestBindingMode.json);
 
+        onException(Exception.class)
+        .handled(true)
+        .log("Internal Server Error")
+        .setBody(simple("Internal Server Error"));
+
         rest("/persons")
                 .get()
                 .to("direct:getPersons")
