@@ -155,8 +155,7 @@ Replace **YOUR_URL** with your own value.
 ]
 ```
 
-### Create Quarkus Java Service
-Quarkus allows you to create native binary using GraalVM (https://quarkus.io/guides/building-native-image).
+## Create Quarkus Java Service
 
 Inside Folder [.cloudbuild](https://github.com/mikeintoch/gcp-quarkus-samples/tree/main/cloudbuild/run/.cloudbuild) there are scripts to execute our Pipeline
 
