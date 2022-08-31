@@ -90,7 +90,7 @@ substitutions:
 
 * You can run this pipeline using the below command to perform a build operation which will generate a docker image. It will also perform deploy operations to the cloud run.
 ```shell script
-gcloud builds submit --config .clouduild/native-build.yaml --region us-central1
+gcloud builds submit --config .cloudbuild/native-build.yaml --region us-central1
 ```
 
 * Verify Cloud Build History
@@ -199,7 +199,7 @@ substitutions:
 
 * You can run this pipeline using the below command to perform a build operation which will generate a docker image. It will also perform deploy operations to the cloud run.
 ```shell script
-gcloud builds submit --config .clouduild/jvm-build.yaml --region us-central1
+gcloud builds submit --config .cloudbuild/jvm-build.yaml --region us-central1
 ```
 
 * Verify Cloud Build History
