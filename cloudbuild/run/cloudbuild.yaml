@@ -2,4 +2,4 @@ steps:
 
 #Build and create container image via jib plugin
 - name: 'gcr.io/cloud-builders/mvn'
-  args: ['package', '-f',' cloudbuild/run/pom.xml','-Dquarkus.container-image.tag=latest', '-Dquarkus.jib.base-jvm-image=gcr.io/distroless/java:latest', '-Dquarkus.container-image.group=$PROJECT_ID']
+  args: ['package', '-Dmaven.test.skip=true']
